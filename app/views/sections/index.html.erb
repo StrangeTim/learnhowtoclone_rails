@@ -1,0 +1,24 @@
+<h1>Index of Sections</h1>
+
+<% if @sections.any? %>
+  <ul>
+    <% @sections.each do |section| %>
+      <div class='sectiondiv' id='<%= section.name %>'>
+        <li><button class="btn btn-link btn-s" data-toggle="collapse"
+          data-target='#<%= section.name %>2'><%= section.name %></button></li>
+        <div class="lessondiv" id='<%= section.name %>2'>
+          <ul>
+            <% section.lessons.each do |lesson| %>
+              <li><%= lesson.name %></li>
+            <% end %>
+            <li><%= link_to "Go To #{section.name} Section Page", section_path(section) %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+<% else %>
+  <p><h3>No sections currently in the Index</h3></p>
+<% end %>
+
+<%= link_to 'Add a Section', new_section_path %>
