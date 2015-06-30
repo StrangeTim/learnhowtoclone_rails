@@ -17,6 +17,29 @@ class LessonsController < ApplicationController
     end
   end
 
+  def show
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(lesson_params)
+      redirect_to lessons_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    redirect_to lessons_path
+  end
+
   private
   def lesson_params
     params.require(:lesson).permit(:name)
