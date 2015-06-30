@@ -23,6 +23,7 @@ describe 'the show section path' do
     fill_in 'Name', :with => "Ruby"
     click_on "Create Section"
     click_on "Ruby"
+    click_on 'Go To Ruby Section Page'
     expect(page).to have_content 'Ruby Details'
   end
 
@@ -32,11 +33,11 @@ describe 'the show section path' do
     fill_in 'Name', :with => "Ruby"
     click_on "Create Section"
     click_on "Ruby"
+    click_on 'Go To Ruby Section Page'
     click_on "Edit Ruby"
-    fill_in 'Name', :with => "FUN!"
+    fill_in 'Name', :with => "FUN"
     click_on 'Update Section'
-    click_on 'FUN'
-    expect(page).to have_content 'FUN! Details'
+    expect(page).to have_content 'FUN Details'
   end
 
   it 'deletes the name of a section' do
@@ -45,7 +46,8 @@ describe 'the show section path' do
     fill_in 'Name', :with => "Ruby"
     click_on "Create Section"
     click_on "Ruby"
-    click_on "Delete Ruby"
+    click_on 'Go To Ruby Section Page'
+    click_on "Delete"
     # click_on "OK"
     expect(page).to have_content 'Index of Sections'
   end

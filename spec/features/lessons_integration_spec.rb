@@ -7,6 +7,7 @@ describe 'the add lesson path' do
     fill_in 'Name', :with => "Ruby"
     click_on "Create Section"
     click_on 'Ruby'
+    click_on 'Go To Ruby Section Page'
     click_on 'Add a Lesson'
     fill_in 'Name', :with => "BDD"
     click_on 'Create Lesson'
@@ -19,6 +20,7 @@ describe 'the add lesson path' do
     fill_in 'Name', :with => "Ruby"
     click_on "Create Section"
     click_on 'Ruby'
+    click_on 'Go To Ruby Section Page'
     click_on 'Add a Lesson'
     click_on 'Create Lesson'
     expect(page).to have_content 'errors'
@@ -32,6 +34,7 @@ end
 #     fill_in 'Name', :with => "Ruby"
 #     click_on "Create Section"
 #     click_on "Ruby"
+#     click_on 'Go To Ruby Section Page'
 #     expect(page).to have_content 'Ruby Details'
 #   end
 #
@@ -41,10 +44,11 @@ end
 #     fill_in 'Name', :with => "Ruby"
 #     click_on "Create Section"
 #     click_on "Ruby"
+#     click_on 'Go To Ruby Section Page'
 #     click_on "Edit Ruby"
 #     fill_in 'Name', :with => "FUN!"
 #     click_on 'Update Section'
-#     click_on 'FUN'
+#     click_on 'FUN!'
 #     expect(page).to have_content 'FUN! Details'
 #   end
 #
@@ -54,7 +58,8 @@ end
 #     fill_in 'Name', :with => "Ruby"
 #     click_on "Create Section"
 #     click_on "Ruby"
-#     click_on "Delete Ruby"
+#     click_on 'Go To Ruby Section Page'
+#     click_on "Ruby"
 #     # click_on "OK"
 #     expect(page).to have_content 'Index of Sections'
 #   end

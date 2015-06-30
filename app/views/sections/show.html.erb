@@ -1,8 +1,8 @@
   <h1><%= @section.name %> Details</h1>
 
-  <button class="btn btn-warning"><%= link_to "Edit #{@section.name}", edit_section_path(@section) %> &nbsp&nbsp</button>
-  <button class="btn btn-success"><%=  link_to "Return to Sections", section_path %>&nbsp&nbsp</button>
-  <%= link_to "Delete  #{@section.name}", section_path(@section), class: "btn btn-danger", color: '#FFFFC0',
+  <%= link_to "Edit #{@section.name}", edit_section_path(@section), class: "btn btn-warning" %> &nbsp&nbsp
+  <%= link_to "Return to Sections", section_path, class: "btn btn-success" %>&nbsp&nbsp
+  <%= link_to "Delete", section_path(@section), class: "btn btn-danger", color: '#FFFFC0',
                             :data => {:confirm => "Really?",
                             :method => "delete"} %>
   <hr>
