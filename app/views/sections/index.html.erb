@@ -3,7 +3,7 @@
 <% if @sections.any? %>
   <ul>
     <% @sections.each do |section| %>
-      <div class='sectiondiv' id='<%= section.name %>'>
+      <div class='sectiondiv col-sm-5 col-sm-offset-1' id='<%= section.name %>'>
         <li><button class="btn btn-link btn-s" data-toggle="collapse"
           data-target='#<%= section.name %>2'><%= section.name %></button></li>
         <div class="lessondiv" id='<%= section.name %>2'>
@@ -20,5 +20,6 @@
 <% else %>
   <p><h3>No sections currently in the Index</h3></p>
 <% end %>
-
+<div class="clearfix"></div>
+<hr>
 <%= link_to 'Add a Section', new_section_path %>
